@@ -1,0 +1,76 @@
+/* Pastel birthday style */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+  --pink: #ffb6c1;
+  --yellow: #fff2a8;
+  --blue: #b5e4ff;
+  --purple: #d8baff;
+  --bg: #fff7fb;
+}
+
+body {
+  margin: 0;
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(180deg, var(--bg), #fff);
+  color: #444;
+  text-align: center;
+}
+
+header, footer {
+  background: var(--pink);
+  color: #fff;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: var(--purple);
+}
+
+nav a {
+  text-decoration: none;
+  background: var(--blue);
+  color: #444;
+  padding: 6px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--yellow);
+  transform: scale(1.1) rotate(-3deg);
+}
+
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease;
+}
+
+h2 {
+  color: var(--pink);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.countdown {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--purple);
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}

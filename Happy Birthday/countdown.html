@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Countdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>⏳ Countdown Ulang Tahun ⏳</h1>
+  </header>
+  <nav>
+    <a href="index.html">Ucapan Panjang</a>
+    <a href="tentang.html">Tentang Kamu</a>
+    <a href="ucapan-kami.html">Ucapan Kami</a>
+    <a href="countdown.html">Countdown</a>
+  </nav>
+  <section>
+    <h2>Hitung Mundur ke 19 September 2025</h2>
+    <div class="countdown" id="timer"></div>
+  </section>
+  <footer>💖 Dibuat dengan cinta oleh calon istri tersayang! 💖</footer>
+  <script>
+    const targetDate = new Date('2025-09-19T00:00:00').getTime();
+    const timerEl = document.getElementById('timer');
+    function updateTimer(){
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if(distance < 0){
+        timerEl.innerHTML = '🎉 Hari ulang tahun telah tiba! 🎉';
+        clearInterval(interval);
+        return;
+      }
+      const days = Math.floor(distance/(1000*60*60*24));
+      const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+      const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+      const seconds = Math.floor((distance%(1000*60))/1000);
+      timerEl.innerHTML = days+' Hari '+hours+' Jam '+minutes+' Menit '+seconds+' Detik';
+    }
+    updateTimer();
+    const interval = setInterval(updateTimer,1000);
+  </script>
+</body>
+</html>
